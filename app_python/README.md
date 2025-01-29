@@ -2,6 +2,26 @@
 
 Simple Flask web application for displaying the exact current time in Moscow.
 
+## 🐋 Docker
+
+### Build from source
+
+```shell 
+docker build -t innoenjoyer/moscow-time-app .
+```
+
+### Pull from DockerHub
+
+```shell
+docker pull innoenjoyer/moscow-time-app
+```
+
+### Run
+
+```shell
+docker run -it -p 5000:5000 innoenjoyer/moscow-time-app
+```
+
 ## ⬇️ Clone & Setup
 
 1. Download and install the latest version of [Python 3](https://www.python.org/downloads/)
