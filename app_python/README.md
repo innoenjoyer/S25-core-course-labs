@@ -2,6 +2,13 @@
 
 Simple Flask web application for displaying the exact current time in Moscow.
 
+## ✨ Features
+
+- [x] Display current Moscow time
+- [x] Dockerize application
+- [x] Code Testing
+- [x] CI workflows
+
 ## 🐋 Docker
 
 ### Build from source
@@ -81,9 +88,7 @@ ruff check --fix
 ruff format
 ```
 
-## ✨ Features
-
-- [x] Display current Moscow time
-- [ ] Dockerize application
-- [ ] Code Testing
-- [ ] CI workflows
+## 🧪 Unit Tests
+```shell
+pytest
+```
