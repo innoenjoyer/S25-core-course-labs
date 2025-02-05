@@ -53,6 +53,16 @@ jobs:
       - name: Run tests
         run: pytest
 
+  security:
+    name: Identify vulnerabilities
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.11@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
   docker:
     name: Docker Build & Push
     runs-on: ubuntu-latest
