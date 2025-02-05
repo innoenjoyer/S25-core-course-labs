@@ -63,9 +63,7 @@ jobs:
   docker:
     name: Docker Build & Push
     runs-on: ubuntu-latest
-    needs:
-      - build-and-test
-      - security
+    needs: build-and-test
 
     defaults:
       run:
