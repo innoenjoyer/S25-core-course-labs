@@ -89,6 +89,17 @@ ruff format
 ```
 
 ## 🧪 Unit Tests
+
 ```shell
 pytest
 ```
+
+## 🔃 CI workflow
+
+This project [uses](https://github.com/innoenjoyer/S25-core-course-labs/blob/master/.github/workflows/ci.yml)
+GitHub Actions for CI.
+
+- Build app
+- Run tests
+- Run linter & formatter
+- Build Docker image & Push on DockerHub
