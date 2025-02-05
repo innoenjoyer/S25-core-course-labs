@@ -1,5 +1,7 @@
 # Moscow Time App
 
+[![CI pipeline](https://github.com/innoenjoyer/S25-core-course-labs/actions/workflows/ci.yml/badge.svg)](https://github.com/innoenjoyer/S25-core-course-labs/actions/workflows/ci.yml)
+
 Simple Flask web application for displaying the exact current time in Moscow.
 
 ## ✨ Features
