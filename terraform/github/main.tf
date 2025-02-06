@@ -12,9 +12,9 @@ provider "github" {
 }
 
 resource "github_repository" "repo" {
-  name               = var.repo_name
-  description        = var.repo_description
-  visibility         = var.repo_visibility
+  name        = var.repo_name
+  description = var.repo_description
+  visibility  = var.repo_visibility
 }
 
 resource "github_branch_default" "master" {
