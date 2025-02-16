@@ -260,3 +260,82 @@ ansible-inventory -i ansible/inventory/default_aws_ec2.yml --graph
   |--@ungrouped:
   |  |--vm
 ```
+
+## Simple Python Web App
+
+```shell
+ $ ansible-playbook -i ansible/inventory/default_aws_ec2.yml ansible/playbooks/dev/app_python/main.yaml
+```
+
+```text
+PLAY [Simple Python Web App] ***************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************************
+[WARNING]: Platform linux on host vm is using the discovered Python interpreter at /usr/bin/python3.12, but future installation
+of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ok: [vm]
+
+TASK [docker : include_tasks] **************************************************************************************************
+included: /mnt/c/Users/anija/Desktop/S25-core-course-labs/ansible/roles/docker/tasks/install_docker.yml for vm
+   
+TASK [docker : Ensure dependencies are installed] ******************************************************************************
+ok: [vm]
+
+TASK [docker : Ensure directory exists for /etc/apt/keyrings] ******************************************************************
+ok: [vm]
+
+TASK [docker : Add Docker gpg key] *********************************************************************************************
+ok: [vm]
+
+TASK [docker : Add Docker repository] ******************************************************************************************
+ok: [vm]
+
+TASK [docker : Install Docker] *************************************************************************************************
+ok: [vm]
+
+TASK [docker : Add user to Docker group] ***************************************************************************************
+ok: [vm]
+
+TASK [docker : Disable root access] ********************************************************************************************
+ok: [vm]
+
+TASK [docker : Enable Docker service] ******************************************************************************************
+ok: [vm]
+
+TASK [docker : include_tasks] **************************************************************************************************
+included: /mnt/c/Users/anija/Desktop/S25-core-course-labs/ansible/roles/docker/tasks/install_compose.yml for vm
+   
+TASK [docker : Install Docker Compose] *****************************************************************************************
+ok: [vm]
+
+TASK [docker : include_tasks] **************************************************************************************************
+included: /mnt/c/Users/anija/Desktop/S25-core-course-labs/ansible/roles/docker/tasks/configure_docker.yml for vm
+
+TASK [docker : Add user to Docker group] ***************************************************************************************
+ok: [vm]
+
+TASK [docker : Disable root access] ********************************************************************************************
+ok: [vm]
+
+TASK [docker : Enable Docker service] ******************************************************************************************
+ok: [vm]
+
+TASK [web_app : Create App Directory] ******************************************************************************************
+changed: [vm]
+
+TASK [web_app : Copy Docker Compose file] **************************************************************************************
+changed: [vm]
+
+TASK [web_app : Run Application] ***********************************************************************************************
+changed: [vm]
+
+TASK [web_app : Remove Docker container] ***************************************************************************************
+skipping: [vm]
+
+TASK [web_app : Remove docker-compose.yml] *************************************************************************************
+skipping: [vm]
+
+PLAY RECAP *********************************************************************************************************************
+vm                         : ok=21   changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+```
