@@ -1,4 +1,11 @@
-# Metrics 
+# Metrics
+
+## Service Configuration
+- Log rotation mechanisms
+  - JSON file 
+  - 3 log files & 10 MB limits  
+- Memory limits
+  - 512 MB per container
 
 ## Screenshots
 

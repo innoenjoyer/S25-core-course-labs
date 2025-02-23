@@ -7,6 +7,15 @@ services:
       - "5000:5000"
     networks:
       - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: "512m"
 
   loki:
     image: grafana/loki:latest
@@ -17,6 +26,15 @@ services:
       - loki_data:/loki
     networks:
       - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: "512m"
 
   promtail:
     image: grafana/promtail:latest
@@ -27,6 +45,15 @@ services:
     command: -config.file=/etc/promtail/config.yml
     networks:
       - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: "512m"
 
   grafana:
     image: grafana/grafana:latest
@@ -58,6 +85,15 @@ services:
       - "3000:3000"
     networks:
       - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: "512m"
 
   prometheus:
     image: prom/prometheus:latest
@@ -78,6 +114,15 @@ services:
       - "9090:9090"
     networks:
       - loki
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: "512m"
 
 
 networks:
